@@ -12,7 +12,7 @@
   position: absolute;
   height: 100%;
   width: 1px;
-  left: -1em;
+  left: 0em;
   float: left;
   border-left: 3px double black;
 }
@@ -23,10 +23,12 @@
 /* Line numbering */
 .kix-lineview.numbered::before {
   content: attr(ln-number);
-  position: relative;
-  left: -4em;
-  width: 2em;
-  text-align: right;
+  position: absolute;
+  left: -1.3em;
+  width: 8px;
+  font-size: 8px;
+  line-height: 16px;
+  text-align: left;
   float: left;
   color: #626871;
 }

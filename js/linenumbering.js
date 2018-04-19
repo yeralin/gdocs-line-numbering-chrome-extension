@@ -18,7 +18,7 @@ if ( $( 'body' ).find( ".kix-lineview" ).length == 0 ) {
 //**********//
 
 // Default Values
-var everyXLine = 5;
+var everyXLine = 1;
 var numberHeaderFooter = false;
 var numberBlankLines = false;
 var numberParagraphsOnly = true;
@@ -74,7 +74,7 @@ function updateEveryXLine() {
 		if ( result[ "everyXLine" ] > 0 && result[ "everyXLine" ] <= 100 ) {
 			everyXLine = result[ "everyXLine" ];
 		} else {
-			everyXLine = 5;
+			everyXLine = 1;
 		}
 		console.log( "Updated everyXLine to " + everyXLine );
 	} );
@@ -156,7 +156,7 @@ function numberLine( $lineview ) {
 		return false;
 	} else if ( !numberBlankLines && $lineview.find( "span.kix-wordhtmlgenerator-word-node" ).text().replace( /\s/g, "" ) === "" ) {
 		// Blank line?
-		return false;
+		return true;
 	} else if ( numberParagraphsOnly && $lineview.parent().attr( "id" ) ) {
 		if ( $lineview.parent().attr( "id" ).replace( /\.[^]*/, "" ) === "h" ) {
 			// Not pragraph?
